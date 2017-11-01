@@ -11,11 +11,11 @@ import './stylesheets/styles.css';
 import reducers from './reducers';
 
 //COMPONENTS
-import App from './components/app';
+import Home from './components/home';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore)
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
+    <Home />
   </Provider>,
   document.getElementById('root'));

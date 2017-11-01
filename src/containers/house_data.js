@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 //REDUCERS
 import HPI from '../reducers';
@@ -22,10 +23,10 @@ class HouseData extends Component {
     this.state = {
 
     };
-    this.handleClick = this.handleClick.bind(this);
+    this.handleSixMonths = this.handleSixMonths.bind(this);
   }
 
-  handleClick(props) {
+  handleSixMonths(props) {
     this.props.fetchSixMo(this.props.stateAbbv)
   }
 
@@ -34,10 +35,10 @@ class HouseData extends Component {
     return (
       <div className="container">
         <div className="text-center">
-          <button className="btn btn-secondary"
-            onClick={this.handleClick}
-          >6M</button>
-          <button className="btn btn-secondary">1Y</button>
+          <Link to='/6mo'>
+            <button className="btn btn-secondary" onClick={this.handleSixMonths}>6M</button>
+          </Link>
+            <button className="btn btn-secondary">1Y</button>
           <button className="btn btn-secondary">5Y</button>
           <button className="btn btn-secondary">MAX</button>
         </div>
