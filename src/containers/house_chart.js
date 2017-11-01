@@ -20,14 +20,20 @@ class HouseChart extends Component {
     const dataset_code = stateName.dataset.dataset_code
     const value = stateName.dataset.data.map(data => data[1]).join()
     const formattedValue = value.split(',').join('\n')
-    console.log(formattedValue)
     const reversedData = value.split(',').reverse()
 
     return (
       <div key={dataset_code}>
         <h3 className="head text-center">{name} from {start} to {end}</h3>
-        <Chart data={reversedData} color='black' />
-        <li>{formattedValue}</li>
+        <div className="row">
+        <div className="prices col-2">
+          <h5>Value</h5>
+          {formattedValue}
+        </div>
+        <div className="graph col-10 text-center">
+          <Chart data={reversedData} color='black' />
+        </div>
+        </div>
       </div>
     )
   }
