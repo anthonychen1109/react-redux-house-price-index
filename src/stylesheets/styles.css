@@ -1,0 +1,23 @@
+body {
+  background-image: url("http://www.trlplaw.com/wp-content/uploads/2015/02/banner-fox-towers_3.jpg");
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed; }
+
+.date, .value {
+  margin: auto; }
+
+svg {
+  border: 1px solid black;
+  margin-top: 5px;
+  margin-left: 25%;
+  width: 50%;
+  height: 10%; }
+
+.heading {
+  margin-top: 5px; }
+
+/*# sourceMappingURL=styles.css.map */
