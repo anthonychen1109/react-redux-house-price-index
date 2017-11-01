@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import moment from 'moment';
 
@@ -19,6 +20,10 @@ class HouseIndex extends Component {
       stateName: '',
       display: false
     };
+
+    HouseIndex.propTypes = {
+      stateName: PropTypes.string.isRequired
+    }
   }
 
   onFormSubmit = (event) => {
@@ -36,7 +41,7 @@ class HouseIndex extends Component {
       <div className="container">
         <form className="input-group" onSubmit={this.onFormSubmit}>
           <input
-            placeholder="Enter a state abbreviation"
+            placeholder="Get House Price Index Of A State"
             className="form-control"
             onChange={this.onInputChange}
             value={this.state.stateName}
@@ -55,13 +60,7 @@ class HouseIndex extends Component {
           {this.state.display ?
             <HouseData stateAbbv={this.state.stateName}/>
             :
-            <div className="description">
-              <br />
-              <h4>A House Price Index (HPI) is a tool that measures changes in single-family home prices across a designated market. These tools can show you areas where home values are increasing or decreasing so you can estimate prices</h4>
-              <hr />
-              <br />
-              <h4>A House Price Index (HPI) measures the price changes of residential housing. Methodologies commonly used to calculate HPI are the hedonic regression (HR), simple moving average (SMA) and repeat-sales regression (RSR)</h4>
-            </div>
+            null
           }
         </div>
       </div>
