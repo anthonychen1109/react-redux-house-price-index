@@ -2,18 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-//REDUCERS
-import HPI from '../reducers';
-import SixMonth from '../reducers';
-
 //ACTIONS
 import { fetchData, fetchSixMo } from '../actions';
 
-//CONTAINERS
-import HouseChart from './house_chart';
-
-//COMPONENTS
-import Chart from '../components/chart';
 
 class HouseData extends Component {
 

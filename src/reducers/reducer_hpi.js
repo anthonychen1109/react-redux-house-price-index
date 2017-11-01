@@ -1,5 +1,4 @@
 import { FETCH_DATA } from '../actions';
-import { FETCH_FIVE_DAY } from '../actions';
 
 export default function(state=[], action) {
   switch(action.type){

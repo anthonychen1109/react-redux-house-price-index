@@ -22,6 +22,13 @@ svg {
 
 .description {
   margin-bottom: 10px;
-  position: absolute; }
+  position: absolute;
+  margin-left: 10px;
+  margin-right: 10px; }
+
+.directory {
+  margin: auto;
+  margin-bottom: 5px;
+  margin-left: 20%; }
 
 /*# sourceMappingURL=styles.css.map */

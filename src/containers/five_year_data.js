@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Chart from '../components/chart';
 
 //ACTIONS
-import { fetchSixMo } from '../actions';
+import { fetchFiveYr } from '../actions';
 
 class HouseChart extends Component {
 
@@ -18,7 +18,7 @@ class HouseChart extends Component {
 
   onFormSubmit = (event) => {
     event.preventDefault();
-    this.props.fetchSixMo(this.state.stateName)
+    this.props.fetchFiveYr(this.state.stateName)
     this.setState({ stateName: '' })
   }
 
@@ -46,7 +46,7 @@ class HouseChart extends Component {
     return (
       <div className="container">
         <div>
-          <h4 className='text-center'>6 Month Data Selected:</h4>
+          <h4 className='text-center'>5 Year Data Selected:</h4>
         </div>
         <form className="input-group" onSubmit={this.onFormSubmit}>
           <input
@@ -65,18 +65,20 @@ class HouseChart extends Component {
           </span>
         </form>
         <div>
-          {this.props.SixMonth.map(this.renderData)}
+          {this.props.FiveYear.map(this.renderData)}
         </div>
       </div>
     )
   }
 }
 
-function mapStateToProps({ HPI, SixMonth }){
+function mapStateToProps({ HPI, SixMonth, OneYear, FiveYear }){
   return {
     HPI,
-    SixMonth
+    SixMonth,
+    OneYear,
+    FiveYear,
   }
 }
 
-export default connect(mapStateToProps, { fetchSixMo })(HouseChart);
+export default connect(mapStateToProps, { fetchFiveYr })(HouseChart);
