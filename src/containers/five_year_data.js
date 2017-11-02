@@ -18,7 +18,11 @@ class HouseChart extends Component {
 
   onFormSubmit = (event) => {
     event.preventDefault();
-    this.props.fetchFiveYr(this.state.stateName)
+    if (this.state.stateName.length === 2) {
+      this.props.fetchFiveYr(this.state.stateName)
+    } else {
+      alert('Please Enter A Valid State Abbreviation')
+    }
     this.setState({ stateName: '' })
   }
 

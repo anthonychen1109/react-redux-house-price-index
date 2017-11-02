@@ -16,7 +16,6 @@ export function fetchData(nameOfState) {
   const url = `${BASE_URL}/FMAC/HPI_${nameOfState}.json?api_key=${API_KEY}`
 
   const request = axios.get(url)
-  console.log(request)
 
   return {
     type: FETCH_DATA,
