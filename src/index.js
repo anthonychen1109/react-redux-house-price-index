@@ -1,21 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReduxPromise from 'redux-promise'
+import './static/css/styles.css';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-
-//CSS
-import './stylesheets/styles.css';
-
-//REDUCERS
+import reduxPromise from 'redux-promise';
 import reducers from './reducers';
 
-//COMPONENTS
-import Home from './components/home';
+// Components
+import App from './components/app';
 
-const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore)
+const createStoreWithMiddleWare = applyMiddleware(reduxPromise)(createStore);
+
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <Home />
-  </Provider>,
-  document.getElementById('root'));
+  <Provider store={createStoreWithMiddleWare(reducers)}>
+    <App />
+  </Provider>, document.getElementById('root'));

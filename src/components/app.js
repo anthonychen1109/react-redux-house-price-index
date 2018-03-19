@@ -1,13 +1,16 @@
 import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-//CONTAINERS
-import HPI from '../containers/house_index';
+// Containers
+import Main from '../containers/main';
 
 const App = () => {
   return (
-    <div>
-      <HPI />
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route to="/" component={Main}/>
+      </Switch>
+    </BrowserRouter>
   )
 }
 
